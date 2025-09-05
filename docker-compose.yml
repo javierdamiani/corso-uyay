@@ -13,4 +13,4 @@ services:
       - 2580:80
       - 2543:443
     volumes:
-      - /dist:/var/www/html/
+      - .:/var/www/html/
