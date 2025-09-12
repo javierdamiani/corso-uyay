@@ -10,7 +10,7 @@ services:
       APP_UID: "1000"
       APP_GID: "1000"
     ports:
-      - 5003:5003
-      - 5004:5004
+      - 5003:80
+      - 5004:443
     volumes:
       - ./dist:/var/www/html/
