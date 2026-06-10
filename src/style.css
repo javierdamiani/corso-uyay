@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+    --color-black: #000000;
+    --color-white: #fff;
+    --color-morado: #5A00AA;
+    --color-morado-light: #9169ff;
+    --color-gray: #C0C0C0;
+    --color-purpura: #8750FF;
+    --color-morado-oscuro: #10021D;
+    --color-plomo: #f4f4f4;
+    --font-sans: "Neue Plak", sans-serif;
+    --font-condensed: "Neue Plak Condensed", sans-serif;
+    --font-narrow: "Neue Plak Narrow", sans-serif;
+}
+
+@font-face {
+  font-family: "NeuePlak";
+  src: url("/fonts/NeuePlak-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeuePlak";
+  src: url("/fonts/NeuePlak-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeuePlak";
+  src: url("/fonts/NeuePlak-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeuePlak";
+  src: url("/fonts/NeuePlak-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeuePlak";
+  src: url("/fonts/NeuePlak-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: "NeuePlak", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img, picture, video, canvas, svg { display: block; max-width: 100%; }
+  input, button, textarea, select { font: inherit; }
+  p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+  #root, #app { isolation: isolate; }
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+p {
+  color: #000
+}
+
+[data-dots] .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: #5A00AA;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+[data-dots] .dot[data-active] {
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    border: 1px solid #5A00AA;
+}
+
+.card-eje.is-active .card-front {
+    opacity: 0;
+}
+.card-eje.is-active .card-back {
+    opacity: 1;
+}
+
+.active {
+    transition: transform 0.3s ease;
+}
+.active.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* 
+[id^="slider-"] [data-slide-item] {
+    flex: 0 0 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+[id^="slider-"] {
+    overflow: hidden;           
+    position: relative;
+} 
+
+[id^="slider-"] [data-slide-item] {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+} */
