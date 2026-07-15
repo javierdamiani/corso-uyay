@@ -126,23 +126,3 @@ p {
 .active.rotate-180 {
     transform: rotate(180deg);
 }
-
-/* 
-[id^="slider-"] [data-slide-item] {
-    flex: 0 0 100%;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-[id^="slider-"] {
-    overflow: hidden;           
-    position: relative;
-} 
-
-[id^="slider-"] [data-slide-item] {
-    flex: 0 0 100%;
-    width: 100%;
-    min-width: 100%;
-} */
