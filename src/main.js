@@ -98,46 +98,24 @@ function initSlider(sliderId) {
     goToSlide(0)
 }
 
-initSlider('slider-amautas')
-initSlider('slider-2024')
-initSlider('slider-2025')
+initSlider('slider-santiago2025')
 
-// MODAL
-const modal       = document.getElementById('customModal');
-const modalTitle  = document.getElementById('modalTitle');
-const modalDesc   = document.getElementById('modalDescription');
-const closeModalX = document.getElementById('closeModalX');
+// PISTA DE AUDIO
+const pista    = document.getElementById('pista-santiago')
+const btnPista = document.getElementById('btn-pista')
 
-const openModal = ({ name, description, img }) => {
-  modalTitle.textContent       = name;
-  modalDesc.textContent        = description;
-  modal.classList.remove('hidden');
-  modal.classList.add('flex');
-  document.body.style.overflow = 'hidden';
-};
+if (pista && btnPista) {
+    btnPista.addEventListener('click', () => {
+        if (pista.paused) {
+            pista.play()
+            btnPista.textContent = 'Pausar pista'
+        } else {
+            pista.pause()
+            btnPista.textContent = 'Reproducir pista'
+        }
+    })
 
-const closeModal = () => {
-  modal.classList.remove('flex');
-  modal.classList.add('hidden');
-  document.body.style.overflow = '';
-};
-
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.open-modal-btn');
-  if (btn) {
-    openModal({
-      name:        btn.dataset.name,
-      description: btn.dataset.description,
-    });
-  }
-});
-
-closeModalX.addEventListener('click', closeModal);
-
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) closeModal();
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
-});
+    pista.addEventListener('ended', () => {
+        btnPista.textContent = 'Reproducir pista'
+    })
+}
