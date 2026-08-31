@@ -25,9 +25,18 @@ function initSlider(sliderId) {
         return Math.round(sliderWidth / (cardWidth + 16)) || 1
     }
 
-    // Scroll posibles
+    // Paginas: avanza de a un set completo de tarjetas visibles
     function getTotalSteps() {
-        return items.length - getVisibleCount() + 1
+        return Math.ceil(items.length / getVisibleCount())
+    }
+
+    // Ancho de una pagina completa
+    function getStepWidth() {
+        return Math.max(1, (items[0].offsetWidth + 16) * getVisibleCount())
+    }
+
+    function getMaxScroll() {
+        return slider.scrollWidth - slider.clientWidth
     }
 
     // Genera
@@ -39,7 +48,7 @@ function initSlider(sliderId) {
         for (let i = 0; i < steps; i++) {
             const dot = document.createElement('button')
             dot.className = 'dot'
-            dot.setAttribute('aria-label', `Slide ${i + 1}`)
+            dot.setAttribute('aria-label', `Pagina ${i + 1}`)
             dot.addEventListener('click', () => goToSlide(i))
             dotsContainer.appendChild(dot)
         }
@@ -66,9 +75,7 @@ function initSlider(sliderId) {
         const steps = getTotalSteps()
         current = Math.max(0, Math.min(index, steps - 1))
 
-        const cardWidth = items[0].offsetWidth
-        const gap = 16
-        slider.scrollTo({ left: (cardWidth + gap) * current, behavior: 'smooth' })
+        slider.scrollTo({ left: Math.min(getStepWidth() * current, getMaxScroll()), behavior: 'smooth' })
 
         updateControls()
     }
@@ -77,9 +84,9 @@ function initSlider(sliderId) {
     slider.addEventListener('scroll', () => {
         clearTimeout(scrollTimer)
         scrollTimer = setTimeout(() => {
-            const cardWidth = items[0].offsetWidth
-            const gap = 16
-            current = Math.round(slider.scrollLeft / (cardWidth + gap))
+            // La ultima pagina queda recortada, el navegador topea el scroll
+            if (slider.scrollLeft >= getMaxScroll() - 1) current = getTotalSteps() - 1
+            else current = Math.round(slider.scrollLeft / getStepWidth())
             updateControls()
         }, 80)
     })
