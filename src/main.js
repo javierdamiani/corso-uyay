@@ -98,4 +98,4 @@ function initSlider(sliderId) {
     goToSlide(0)
 }
 
-initSlider('slider-santiago2025')
+initSlider('slider-confprensa')
