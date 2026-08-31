@@ -99,23 +99,3 @@ function initSlider(sliderId) {
 }
 
 initSlider('slider-santiago2025')
-
-// PISTA DE AUDIO
-const pista    = document.getElementById('pista-santiago')
-const btnPista = document.getElementById('btn-pista')
-
-if (pista && btnPista) {
-    btnPista.addEventListener('click', () => {
-        if (pista.paused) {
-            pista.play()
-            btnPista.textContent = 'Pausar pista'
-        } else {
-            pista.pause()
-            btnPista.textContent = 'Reproducir pista'
-        }
-    })
-
-    pista.addEventListener('ended', () => {
-        btnPista.textContent = 'Reproducir pista'
-    })
-}
