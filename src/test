@@ -1,0 +1,173 @@
+
+Gabriel Gonzales Canchumani
+9:10
+<head>
+  <!-- 1. Conexión anticipada al origen REAL de las fuentes -->
+  <link
+    rel="preconnect"
+    href="https://storagecie.sfo3.digitaloceanspaces.com"
+    crossorigin
+  >
+
+  <!-- 2. Cargar la definición de las fuentes -->
+  <link
+    rel="stylesheet"
+    href="https://storagecie.sfo3.digitaloceanspaces.com/fonts/fonts.css"
+  >
+</head>
+
+Gabriel Gonzales Canchumani
+9:17
+/* ==========================================================================
+   Neue Plak — UC
+   ========================================================================== */
+
+/* Neue Plak
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Neue Plak";
+  src: url("./NeuePlak-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Plak";
+  src: url("./NeuePlak-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Plak";
+  src: url("./NeuePlak-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Plak";
+  src: url("./NeuePlak-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Plak";
+  src: url("./NeuePlak-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Plak";
+  src: url("./NeuePlak-ExtraBlack.woff2") format("woff2");
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* Neue Plak Condensed
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Neue Plak Condensed";
+  src: url("./NeuePlakCondensed-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Plak Condensed";
+  src: url("./NeuePlakCondensed-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* Neue Plak Narrow
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Neue Plak Narrow";
+  src: url("./NeuePlak-NarrowBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* Design tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+  --font-uc: "Neue Plak", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-uc-condensed: "Neue Plak Condensed", "Neue Plak", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-uc-narrow: "Neue Plak Narrow", "Neue Plak", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+  --font-weight-extrablack: 950;
+}
+
+
+/* Utilidades
+   -------------------------------------------------------------------------- */
+
+.font-uc {
+  font-family: var(--font-uc);
+}
+
+.font-uc-condensed {
+  font-family: var(--font-uc-condensed);
+}
+
+.font-uc-narrow {
+  font-family: var(--font-uc-narrow);
+}
+
+.fw-light {
+  font-weight: 300;
+}
+
+.fw-regular {
+  font-weight: 400;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+.fw-black {
+  font-weight: 900;
+}
+
+.fw-extrablack {
+  font-weight: 950;
+}
+<link
+  rel="preconnect"
+  href="https://storagecie.sfo3.digitaloceanspaces.com"
+  crossorigin
+>
+
+<link
+  rel="stylesheet"
+  href="https://storagecie.sfo3.digitaloceanspaces.com/fonts/fonts.css"
+>

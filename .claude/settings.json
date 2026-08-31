@@ -1,0 +1,102 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/javierdamiani/.cursor/extensions/primos.primos-panel-0.1.0/hooks/emitter.mjs\" session_start"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/javierdamiani/.cursor/extensions/primos.primos-panel-0.1.0/hooks/genaro.mjs\""
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/javierdamiani/.cursor/extensions/primos.primos-panel-0.1.0/hooks/emitter.mjs\" subagent_start"
+          }
+        ],
+        "matcher": "Task|Agent"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/javierdamiani/.cursor/extensions/primos.primos-panel-0.1.0/hooks/emitter.mjs\" activity"
+          }
+        ],
+        "matcher": "^(?!Task$|Agent$).*"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/javierdamiani/.cursor/extensions/primos.primos-panel-0.1.0/hooks/emitter.mjs\" subagent_stop"
+          }
+        ],
+        "matcher": "Task|Agent"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/javierdamiani/.cursor/extensions/primos.primos-panel-0.1.0/hooks/emitter.mjs\" task_upsert"
+          }
+        ],
+        "matcher": "TaskCreate|TaskUpdate"
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/javierdamiani/.cursor/extensions/primos.primos-panel-0.1.0/hooks/emitter.mjs\" activity"
+          }
+        ],
+        "matcher": "^(?!Task$|Agent$|TaskCreate$|TaskUpdate$).*"
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/javierdamiani/.cursor/extensions/primos.primos-panel-0.1.0/hooks/emitter.mjs\" subagent_stop"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/javierdamiani/.cursor/extensions/primos.primos-panel-0.1.0/hooks/emitter.mjs\" turn_stop"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/javierdamiani/.cursor/extensions/primos.primos-panel-0.1.0/hooks/emitter.mjs\" session_end"
+          }
+        ]
+      }
+    ]
+  }
+}
